@@ -9,6 +9,7 @@ namespace EmployeeManagement.Web.Pages
 
         public void LoadEmployees()
         {
+
             Employees = new List<Employee>()
             {
                 new Employee{
@@ -18,7 +19,7 @@ namespace EmployeeManagement.Web.Pages
                     Email = "fredrickndolo2@gmail.com",
                     DateOfBirth = new DateTime(1993,03,20),
                     Gender = Gender.Male,
-                    Department = new Department{DepartmentID = 2, DepartmentName = "Info Tech"},
+                    DepartmentID = 1,
                     PhotoPath = "images/003.png"
                 },
                   new Employee{
@@ -28,7 +29,7 @@ namespace EmployeeManagement.Web.Pages
                     Email = "lizasharon95@gmail.com",
                     DateOfBirth = new DateTime(1996,08,31),
                     Gender = Gender.Female,
-                    Department = new Department{DepartmentID = 2, DepartmentName = "Edu Tech"},
+                    DepartmentID = 2,
                     PhotoPath = "images/012.png"
                 },
                   new Employee{
@@ -38,7 +39,7 @@ namespace EmployeeManagement.Web.Pages
                     Email = "phabyfavor@gmail.com",
                     DateOfBirth = new DateTime(2020,11,22),
                     Gender = Gender.Male,
-                    Department = new Department{DepartmentID = 2, DepartmentName = "Co-orp Tech"},
+                    DepartmentID = 3,
                     PhotoPath = "images/013.png"
                 }
             };
@@ -47,6 +48,7 @@ namespace EmployeeManagement.Web.Pages
         protected override Task OnInitializedAsync()
         {
             LoadEmployees();
+
             return base.OnInitializedAsync();
         }
     }
