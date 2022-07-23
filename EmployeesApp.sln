@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Web", "EmployeeManagement.Web\EmployeeManagement.Web.csproj", "{198DB28B-ED57-491D-9125-B31425C9F85F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Api", "EmployeeManagement.Api\EmployeeManagement.Api.csproj", "{90E17228-4B47-464F-A1FD-D51445002A09}"
+	ProjectSection(ProjectDependencies) = postProject
+		{198DB28B-ED57-491D-9125-B31425C9F85F} = {198DB28B-ED57-491D-9125-B31425C9F85F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
