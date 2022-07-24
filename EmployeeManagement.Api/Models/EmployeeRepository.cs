@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Api.Models
 {
-    public class EmployeeRepository:IEmployeeRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
         private readonly ApplicationDbContext context;
 
@@ -36,13 +36,17 @@ namespace EmployeeManagement.Api.Models
 
         public async Task<Employee> GetEmployeeByEmail(string email)
         {
-            return  await context.Employees.Where(i => i.Email == email).SingleOrDefaultAsync();
+            return await context.Employees.Where(i => i.Email == email)
+                .Include(d=>d.Department)
+                .SingleOrDefaultAsync();
 
         }
 
         public async Task<Employee> GetEmployeeById(int id)
         {
-            var result = await context.Employees.FindAsync(id);
+            var result = await context.Employees
+                .Include(d => d.Department)
+                .FirstOrDefaultAsync(e => e.EmployeeID == id);
             return result;
         }
 
@@ -50,6 +54,23 @@ namespace EmployeeManagement.Api.Models
         {
             var employees = await context.Employees.ToListAsync();
             return employees;
+        }
+
+        public async Task<IEnumerable<Employee>> Search(string name, Gender? gender)
+        {
+            IQueryable<Employee> employees = context.Employees.Include(d=>d.Department);
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                employees = employees.Where(e => e.FirstName.Contains(name) || e.LastName.Contains(name));
+            }
+
+            if (gender != null)
+            {
+                employees = employees.Where(e => e.Gender ==gender);
+            }
+
+            return await employees.ToListAsync();
         }
 
         public async Task<Employee> UpdateEmployee(Employee employee)

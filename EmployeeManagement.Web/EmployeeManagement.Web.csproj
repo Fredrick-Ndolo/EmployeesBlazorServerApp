@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\EmployeeDetails.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.7" />
@@ -24,6 +28,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Employees.Models\Employees.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\EmployeeDetails.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\EmployeeDetails.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\EmployeeDetails.razor" />
   </ItemGroup>
 
 </Project>
