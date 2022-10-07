@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\EmployeeDetailsBase.cs" />
+    <Compile Remove="Pages\EmployeeListBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\DatabindingDemo.razor" />
     <Content Remove="Pages\EmployeeDetails.razor" />
   </ItemGroup>
 
@@ -35,11 +41,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\DatabindingDemo.razor" />
     <_ContentIncludedByDefault Remove="Pages\EmployeeDetails.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\EmployeeDetails.razor" />
+    <None Include="Pages\DataBindingDemo.razor">
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\DatabindingDemo.razor" />
   </ItemGroup>
 
 </Project>

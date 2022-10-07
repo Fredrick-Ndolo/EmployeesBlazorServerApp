@@ -2,6 +2,7 @@
 using EmployeeManagement.Web.Services;
 using Employees.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace EmployeeManagement.Web.Pages
 {
@@ -18,6 +19,11 @@ namespace EmployeeManagement.Web.Pages
         protected override async Task OnInitializedAsync()
         {
             Employee = await EmployeeService.GetEmployeeById(int.Parse(Id));
+        }
+
+        protected void Mouse_Move(MouseEventArgs e)
+        {
+
         }
 
     }

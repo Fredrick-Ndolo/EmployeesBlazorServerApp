@@ -1,0 +1,29 @@
+﻿
+@page "/details-employee/{Id}"
+
+
+<h3>Employee Details</h3>
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h4>@Employee.FirstName @Employee.LastName </h4>
+            </div>
+            <div class="card-body">
+                <img class="card-img-top" src="@Employee.PhotoPath" @onmousemove="Mouse_Move" />
+
+                <h5>Employee ID : @Employee.EmployeeID</h5>
+                <h5>Email : @Employee.Email</h5>
+                <h5>Department : @(Employee.Department.DepartmentName)</h5>
+            </div>
+            <div class="card-footer text-center">
+                <a href="/" class="btn btn-primary m-1">Back</a>
+                <a href="#" class="btn btn-success m-1">Edit</a>
+                <a href="#" class="btn btn-warning m-1">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

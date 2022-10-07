@@ -9,12 +9,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddServerSideBlazor();
+//builder.Services.AddHttpClient();
 
 builder.Services.AddHttpClient<IEmployeeService, EmployeeService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7204/");
 }
+);
 
+builder.Services.AddHttpClient<IDepartmentService, DepartmentService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7204/");
+}
 );
 
 var app = builder.Build();
@@ -30,7 +36,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-
+app.UsePathBase("/");
 app.UseRouting();
 
 app.MapBlazorHub();

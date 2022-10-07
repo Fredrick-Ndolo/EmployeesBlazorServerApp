@@ -1,5 +1,6 @@
 ﻿using EmployeeManagement.Api.Data;
 using Employees.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Api.Models
 {
@@ -11,9 +12,9 @@ namespace EmployeeManagement.Api.Models
         {
             this.context = context;
         }
-        public  Department GetDepartment(int departmentID)
+        public   async Task<Department> GetDepartment(int departmentID)
         {
-            var department = context.Departments.Find(departmentID);
+            var department = await context.Departments.FindAsync(departmentID);
 
             if (department != null)
             {
@@ -23,9 +24,9 @@ namespace EmployeeManagement.Api.Models
             return null;
         }
 
-        public IEnumerable<Department> GetDepartments()
+        public async Task<List<Department>> GetDepartments()
         {
-            var departments = context.Departments.ToList();
+            var departments = await context.Departments.ToListAsync();
 
             if (departments.Count > 0)
             {

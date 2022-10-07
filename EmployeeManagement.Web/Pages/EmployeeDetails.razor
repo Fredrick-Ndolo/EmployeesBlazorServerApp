@@ -1,4 +1,5 @@
-﻿@page "/employeedetails/{id}"
+﻿
+@page "/details-employee/{Id}"
 
 @inherits EmployeeDetailsBase
 
@@ -12,7 +13,7 @@
                 <h4>@Employee.FirstName @Employee.LastName </h4>
             </div>
             <div class="card-body">
-                <img class="card-img-top" src="@Employee.PhotoPath" />
+                <img class="card-img-top" src="@Employee.PhotoPath" @onmousemove="Mouse_Move" />
 
                 <h5>Employee ID : @Employee.EmployeeID</h5>
                 <h5>Email : @Employee.Email</h5>

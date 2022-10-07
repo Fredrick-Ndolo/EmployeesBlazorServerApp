@@ -6,6 +6,7 @@ namespace Employees.Models
     {
         [Key]
         public int DepartmentID { get; set; }
+        [Required]
         public string DepartmentName { get; set; }
 
     }

@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Api", "E
 		{198DB28B-ED57-491D-9125-B31425C9F85F} = {198DB28B-ED57-491D-9125-B31425C9F85F}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeComponentsLibrary", "EmployeeComponentsLibrary\EmployeeComponentsLibrary.csproj", "{5F8918D9-9194-45D9-8FD5-2FA3B45178A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{90E17228-4B47-464F-A1FD-D51445002A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90E17228-4B47-464F-A1FD-D51445002A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90E17228-4B47-464F-A1FD-D51445002A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F8918D9-9194-45D9-8FD5-2FA3B45178A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8918D9-9194-45D9-8FD5-2FA3B45178A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8918D9-9194-45D9-8FD5-2FA3B45178A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8918D9-9194-45D9-8FD5-2FA3B45178A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
