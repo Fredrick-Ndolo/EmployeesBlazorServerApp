@@ -1,6 +1,6 @@
 ﻿<div class="card m-3" style="min-width:16rem; max-width:30%">
     <div class="card-header">
-        <input type="checkbox" @onchange="SelectionChanged"/>
+        <input type="checkbox" @onchange="SelectionChanged" />
 
         <h4>@Employee.FirstName @Employee.LastName </h4>
     </div>
@@ -12,10 +12,12 @@
         <div class="card-footer text-center">
             <NavLink href="@($"/details-employee/{Employee.EmployeeID}")" class="btn btn-primary m-1" Match="NavLinkMatch.All">View</NavLink>
             <NavLink href="@($"/editemployee/{Employee.EmployeeID}")" class="btn btn-success m-1" Match="NavLinkMatch.All">Edit</NavLink>
-            <NavLink href="#" class="btn btn-warning m-1">Delete</NavLink>
+            <NavLink class="btn btn-warning m-1" @onclick="Delete_Click">Delete</NavLink>
         </div>
 
     }
+
+    <ConfirmDialogBox @ref="DeleteConfirmation" ShowDialogChanged="Confirm_Delete"></ConfirmDialogBox>
 </div>
-<ConfirmDialogBox @ref="DeleteConfirmation"></ConfirmDialogBox>
+
 

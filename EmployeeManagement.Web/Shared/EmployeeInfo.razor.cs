@@ -18,10 +18,19 @@ namespace EmployeeManagement.Web.Shared
         {
             await OnSelectionChanged.InvokeAsync((bool)args.Value);
         }
-        protected EmployeeManagement.Web.Shared.ConfirmDialogBox DeleteConfirmation { get; set; }
+        protected ConfirmDialogBox DeleteConfirmation { get; set; }
         protected async Task Delete_Click()
         {
             DeleteConfirmation.Show();
         }
+
+        protected async Task Confirm_Delete(bool deleteConfirmed)
+        {
+            if (deleteConfirmed)
+            {
+
+            }
+        }
+
     }
 }

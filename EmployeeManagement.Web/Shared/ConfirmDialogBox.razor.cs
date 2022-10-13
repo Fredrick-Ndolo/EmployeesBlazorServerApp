@@ -15,9 +15,10 @@ namespace EmployeeManagement.Web.Shared
         [Parameter]
         public EventCallback<bool> ShowDialogChanged { get; set; }
 
-        protected async void ConfirmAction()
+        protected async void ConfirmAction(bool value)
         {
-            await ShowDialogChanged.InvokeAsync();
+            ShowDialog = false; 
+            await ShowDialogChanged.InvokeAsync(value);
         }
     }
 }
