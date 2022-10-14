@@ -19,6 +19,7 @@ namespace EmployeeManagement.Web.Pages
         protected override async Task OnInitializedAsync()
         {
             Employee = await EmployeeService.GetEmployeeById(int.Parse(Id));
+            await base.OnInitializedAsync();
         }
 
         protected void Mouse_Move(MouseEventArgs e)

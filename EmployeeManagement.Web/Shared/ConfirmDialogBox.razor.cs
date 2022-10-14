@@ -17,7 +17,7 @@ namespace EmployeeManagement.Web.Shared
 
         protected async void ConfirmAction(bool value)
         {
-            ShowDialog = false; 
+            ShowDialog = false;
             await ShowDialogChanged.InvokeAsync(value);
         }
     }

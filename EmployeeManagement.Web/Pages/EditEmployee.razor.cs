@@ -19,10 +19,13 @@ namespace EmployeeManagement.Web.Pages
         [Parameter]
         public string Id { get; set; }
 
+
         protected override async Task OnInitializedAsync()
         {
+
             Employee =await  EmployeeService.GetEmployeeById(int.Parse(Id));
             Departments = await DepartmentService.GetDepartments();
+            await base.OnInitializedAsync();
         }
 
         protected void HandleValidSubmit()

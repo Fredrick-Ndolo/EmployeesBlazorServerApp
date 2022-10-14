@@ -18,6 +18,7 @@ namespace EmployeeManagement.Web.Pages
         protected override async Task OnInitializedAsync()
         {
             Employees = (await EmployeeService.GetEmployees()).ToList();
+            await base.OnInitializedAsync();
         }
 
         protected void EmployeeSelectionChanged(bool isSelected)
